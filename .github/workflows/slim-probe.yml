@@ -1,0 +1,11 @@
+name: slim-probe
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-slim
+    steps:
+      - name: 探測 ubuntu-slim 是否有效
+        shell: bash
+        run: |
+          echo "PICKED ubuntu-slim nproc=$(nproc) os=$(. /etc/os-release; echo $PRETTY_NAME)"
